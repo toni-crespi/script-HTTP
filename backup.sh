@@ -23,3 +23,7 @@ echo "[INFO] Comprimint còpia..."
 tar -czf "$BACKUP_DIR".tar.gz -C /backup $(basename "$BACKUP_DIR")
 
 echo "[OK] Còpia de seguretat completada: $BACKUP_DIR.tar.gz"
+
+# 5. Transferència automatitzada al contenidor de destí
+echo "[INFO] Enviant còpia de seguretat via SCP al contenidor destí..."
+scp "$BACKUP_DIR".tar.gz root@192.168.146.62:/root/
