@@ -23,9 +23,9 @@ cp -a "$RESTORE_DIR"/apache2_config/* /etc/apache2/
 echo "[INFO] Restauració de contingut web..."
 cp -a "$RESTORE_DIR"/www/* /var/www/
 
-echo "[INFO] Restauració de paquets addicionals..."
-dpkg --set-selections < "$RESTORE_DIR"/packages.list
-apt-get dselect-upgrade -y
+#echo "[INFO] Restauració de paquets addicionals..."
+#dpkg --set-selections < "$RESTORE_DIR"/packages.list
+#apt-get dselect-upgrade -y
 
 echo "[INFO] Reiniciant servei HTTP..."
 systemctl restart apache2
